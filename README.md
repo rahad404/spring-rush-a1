@@ -69,7 +69,8 @@ A simple backend system for a social media platform, built with **Spring Boot**.
    mvn spring-boot:run
    ```
 
-The API will be available at `http://localhost:8080`.
+The API will be available at:  `http://localhost:8080`.
+Swagger UI (HTML Page): `http://localhost:8080/swagger-ui/index.html`
 
 ---
 

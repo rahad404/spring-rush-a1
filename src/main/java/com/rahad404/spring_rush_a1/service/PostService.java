@@ -19,6 +19,7 @@ public class PostService {
    @Autowired
    private PostRepository postRepository;
 
+   // create post 
    public PostResponseDTO createPost(PostRequestDTO request){
       Post post = Post.builder()
          .authorName(request.getAuthorName())
@@ -30,6 +31,7 @@ public class PostService {
       return mapToResponseDTO(savedPost);
    }
 
+   // all post
    public List<PostResponseDTO> getAllActivePosts(){
       List<Post> posts = postRepository.findAllByActiveTrue();
       return posts.stream()
@@ -37,6 +39,7 @@ public class PostService {
          .toList();
    }
 
+   // delete post
    public void deletePost(Long id){
       Post post = postRepository.findById(id)
          .orElseThrow(() -> new RuntimeException("Post not found with id: " + id));
@@ -45,6 +48,7 @@ public class PostService {
       postRepository.save(post);
    }
 
+   // mapper
    private PostResponseDTO mapToResponseDTO(Post post){
       return PostResponseDTO.builder()
          .id(post.getId())

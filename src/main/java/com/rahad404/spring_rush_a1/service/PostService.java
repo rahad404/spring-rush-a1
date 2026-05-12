@@ -11,10 +11,10 @@ import com.rahad404.spring_rush_a1.dto.response.PostResponseDTO;
 import com.rahad404.spring_rush_a1.entity.Post;
 import com.rahad404.spring_rush_a1.repository.PostRepository;
 
-import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 @Service
-@Data
+@RequiredArgsConstructor
 public class PostService {
    @Autowired
    private PostRepository postRepository;
